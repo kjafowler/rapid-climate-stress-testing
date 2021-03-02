@@ -1,6 +1,0 @@
-
-All from here:
-C:\kf_GoogleDrive\01_Work\03_PostDocWork\02_FundedProjects\02_EnviroFlows_ClimateChange\05_EvalOfStochMethods_June2020\01_DataToEvaluate\01_ObservedHistoric
-
-Except representative catchment streamflow which is adapted from here:
-C:\kf_GoogleDrive\01_Work\03_PostDocWork\02_OtherResearch\01_CAMELS_AUS\03_Data\03_NotIncludedInVersion1\CAMELS_AUS_OtherTimesteps\Q\streamflow_timeseries_monthly.csv
