@@ -80,7 +80,7 @@ timing.init = toc; tic;
 %  plots in the paper, and no more.  Then do the plotting.
 disp('Done.  Starting stochastic generation...');
 
-for i = 1:11
+for i = 1:12
     
     % only test eleven different combinations of stressors (ie. the ones in Figure 10)
     switch i
@@ -95,6 +95,7 @@ for i = 1:11
         case  9, name = 'deltaRRrel_up';      deltaP =  0.0; deltaT =  0; deltaLowFreqP =      0; deltaSeasonality =     0; deltaRRrship =   -25;         
         case 10, name = 'deltaRRrel_down';    deltaP =  0.0; deltaT =  0; deltaLowFreqP =      0; deltaSeasonality =     0; deltaRRrship = +6.25;         
         case 11, name = 'combination';        deltaP = -0.1; deltaT =  1; deltaLowFreqP = +0.015; deltaSeasonality = +0.03; deltaRRrship = -6.25; 
+        case 12, name = 'combination2';       deltaP = -0.2; deltaT =  2; deltaLowFreqP = +0.030; deltaSeasonality = +0.06; deltaRRrship = -12.5; 
     end
     
     % generate stochastic perturbed data for this combination of stressors
@@ -119,11 +120,11 @@ timing.plotting = toc; tic;
 %  there are too many so we save them as individual .mat files.  
 
 % specify axis gradations
-deltaP_space           = [-0.40 -0.35 -0.30 -0.25 -0.20 -0.15 -0.10 -0.05 0 .05 .10 .15];                    % rainfall percentage change
-deltaT_space           = [0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0];                           % additional degrees of warming
-deltaLowFreqP_space    = [-0.03 -0.015 0 +0.015 +0.03 +0.045 +0.06 +0.075];             % changes n Hurst Coefficient
-deltaSeasonality_space = [-0.06 -0.03 0.00 +0.03 +0.06 +0.09 +0.12 +0.15];              % changes in seasonality
-deltaRRrship_space     = [-50 -43.75 -37.5 -31.25 -25 -18.75 -12.5 -6.25 0 6.25 12.5];  % shift in rainfall runoff relationship
+deltaP_space           = [-0.40 -0.35 -0.30 -0.25 -0.20 -0.15 -0.10 -0.05 0 .05 .10 .15]; % rainfall proportional change
+deltaT_space           = [0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0];                             % additional degrees of warming
+deltaLowFreqP_space    = [-0.03 -0.015 0 +0.015 +0.03 +0.045 +0.06 +0.075];               % changes n Hurst Coefficient
+deltaSeasonality_space = [-0.06 -0.03 0.00 +0.03 +0.06 +0.09 +0.12 +0.15];                % changes in seasonality
+deltaRRrship_space     = [-50 -43.75 -37.5 -31.25 -25 -18.75 -12.5 -6.25 0 6.25 12.5];    % shift in rainfall runoff relationship
 
 % generate data
 for deltaP = deltaP_space 
