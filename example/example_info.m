@@ -1,7 +1,7 @@
 function info = example_info()
     
     % WAPABA parameter values for each region's representative catchment.
-    % See Supplementary Material ## for more information on 
+    % See Supplementary Material S6 for more information on 
     % how these parameter values were obtained.
     WapabaParSets.ParNames = {'a1', 'a2', 'B', 'Smax', 'K'};
     WapabaParSets.A  = [2.8468 1.7065 0.53284 174.1602   1.5096];
@@ -17,8 +17,8 @@ function info = example_info()
     area_km2 = [3469 1291 3570 2423 3424 3240 26099]'; 
     
     % weighting to use when spatially averaging the low frequency component of precipitation
-    % (ie weight by area but ignore region G - see paper, section ##)
-    weighting_lowfreq = [3469 1291 3570 2423 3424 3240 0     ]';
+    % (ie weight by area but ignore region G - see paper, section 3.5)
+    weighting_lowfreq = [3469 1291 3570 2423 3424 3240 0]';
     SubAreaDetails = table(subarea, area_km2, weighting_lowfreq); 
     
     % details of representative catchment for each subarea
@@ -43,11 +43,10 @@ function info = example_info()
     pars.WaterYearStart_clim = 'January'; % basis of water years for climate ('January' means calendar years are used)
     pars.WaterYearStart_flow = 'March';   % basis of water years for streamflow
     pars.StochRepLen_yrs  =  3000;        % length of stochastic replicates, in years
-    pars.Streamflow_BoxCox_Lambda = 0.79; % used during perturbation of the rainfall-runoff relationship (Section ## / Supp Mat ##.)
+    pars.Streamflow_BoxCox_Lambda = 0.79; % used during perturbation of the rainfall-runoff relationship (Section 2.4.5 / Table 1 / Section 3.7 / Supp Mat Section S7)
     
     % store all the above in structure 'info'
     info = struct('WapabaParSets', WapabaParSets, 'SubAreaDetails', SubAreaDetails, 'RepCatchDetails', RepCatchDetails, 'FlowConversionFactors', FlowConversionFactors, 'pars', pars);
     info.SubareaList = subarea;
     
 end
-
